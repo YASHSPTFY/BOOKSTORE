@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Existing styles */
+
+.profile-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.profile-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#profileImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-form {
+    margin-bottom: 20px;
+}
+
+.profile-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.profile-form input, .profile-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.profile-form button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.profile-form button:hover {
+    background-color: #0056b3;
+}
+
+/* New styles for profile links */
+.profile-links {
+    text-align: center;
+}
+
+.profile-button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 10px;
+    font-size: 16px;
+}
+
+.profile-button:hover {
+    background-color: #0056b3;
+}
+/* Styles for the home arrow */
+.home-arrow {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.home-arrow a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.home-arrow a:hover {
+    text-decoration: underline;
+}

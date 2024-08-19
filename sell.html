@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Books - Bookshelf</title>
+    <link rel="stylesheet" href="sell.css">
+    <script>
+        function redirectToProductPage() {
+            // Retrieve book details from the form
+            const bookTitle = document.getElementById('book-title').value;
+            const author = document.getElementById('author').value;
+            const price = document.getElementById('price').value;
+            const description = document.getElementById('book-description').value;
+            const imageFile = document.getElementById('upload-image').files[0];
+            
+            // Prepare a book object
+            const book = {
+                title: bookTitle,
+                author: author,
+                price: price,
+                description: description,
+                image: URL.createObjectURL(imageFile)
+            };
+
+            // Get existing books from localStorage, or initialize an empty array
+            let books = JSON.parse(localStorage.getItem('books')) || [];
+            books.push(book);
+
+            // Save the updated books array back to localStorage
+            localStorage.setItem('books', JSON.stringify(books));
+
+            // Redirect to the product page
+            window.location.href = 'product.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <a href="home.html" class="back-arrow">&#8592; Back</a>
+        <h1>Sell Your Books</h1>
+        <form onsubmit="redirectToProductPage(); return false;" method="post" class="sell-form">
+            <div class="form-group">
+                <label for="book-title">Book Title</label>
+                <input type="text" id="book-title" name="book-title" placeholder="Enter the book title" required>
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author" placeholder="Enter the author's name" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price (in Rs.00)</label>
+                <input type="number" id="price" name="price" placeholder="Enter the price" required>
+            </div>
+            <div class="form-group">
+                <label for="book-description">Description</label>
+                <textarea id="book-description" name="book-description" rows="4" placeholder="Enter a brief description of the book"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="upload-image">Upload Book Image</label>
+                <input type="file" id="upload-image" name="upload-image" accept="image/*">
+            </div>
+            <button type="submit" class="btn-submit">Sell Book</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-arrow a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 16px;
+}
+
+h2 {
+    color: #333;
+}
+
+#order-summary {
+    margin-bottom: 20px;
+}
+
+.order-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.order-item p {
+    margin: 5px 0;
+}
+
+.order-total {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.order-total span {
+    color: #007BFF;
+}
+
+.payment-button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}

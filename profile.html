@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page - Bookshelf</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+    <div class="profile-container">
+        <div class="home-arrow">
+            <a href="home.html">&#9664; Home</a>
+        </div>
+        <h1>Profile Page</h1>
+        <div class="profile-image-container">
+            <img id="profileImage" src="default-profile.png" alt="Profile Image">
+            <input type="file" id="fileInput" accept="image/*" onchange="previewImage(event)">
+        </div>
+        <form class="profile-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" placeholder="Enter your address"></textarea>
+
+            <button type="submit">Update Profile</button>
+        </form>
+        <div class="profile-links">
+            <a href="purchasehis.html" class="profile-button">Purchase History</a>
+            <a href="order.html" class="profile-button">Order Details</a>
+        </div>
+    </div>
+    
+
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const output = document.getElementById('profileImage');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+
+</html>

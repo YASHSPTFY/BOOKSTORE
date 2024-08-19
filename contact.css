@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.back-arrow {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.back-arrow:hover {
+    text-decoration: underline;
+    color: #007BFF;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Georgia', serif;
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-form,
+.store-location {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-family: 'Georgia', serif;
+    color: #444;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.contact-form label {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+.contact-form button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+.store-location iframe {
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    height: 300px;
+}
+
+@media (min-width: 768px) {
+    .contact-form, .store-location {
+        width: 48%;
+    }
+}

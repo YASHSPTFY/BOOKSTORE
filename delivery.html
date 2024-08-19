@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="delivery.css">
+</head>
+<body>
+    <div class="container">
+        <div class="order-summary">
+            <h1>Thank You for Your Purchase!</h1>
+            <p>Your order has been placed successfully.</p>
+            <div class="order-details">
+                <h2>Order Details</h2>
+                <p><strong>Order Number:</strong> #<span id="order-number"></span></p>
+                <p><strong>Date:</strong> <span id="order-date"></span></p>
+                <p><strong>Delivery Address:</strong> <span id="delivery-address"></span></p>
+            </div>
+            <div class="book-list">
+                <h2>Books Ordered:</h2>
+                <ul id="book-list">
+                    <!-- Books will be dynamically inserted here -->
+                </ul>
+            </div>
+            <div class="total">
+                <p><strong>Total Amount:</strong> $<span id="total-amount"></span></p>
+            </div>
+        </div>
+        <div class="actions">
+            <a href="product.html" class="btn">Continue Shopping</a>
+            
+        </div>
+    </div>
+
+    <script>
+        // Simulate data from the backend or local storage
+        const userProfile = {
+            address: "123 Book Street, Booktown, BK 12345"
+        };
+
+        const orderDetails = {
+            orderNumber: "123456",
+            orderDate: new Date().toLocaleDateString(),
+            books: [
+                { title: "Book Title 1", quantity: 1, price: 20, imgSrc: "book1.jpg" },
+                { title: "Book Title 2", quantity: 2, price: 40, imgSrc: "book2.jpg" }
+            ]
+        };
+
+        // Insert data into the HTML
+        document.getElementById("order-number").innerText = orderDetails.orderNumber;
+        document.getElementById("order-date").innerText = orderDetails.orderDate;
+        document.getElementById("delivery-address").innerText = userProfile.address;
+
+        const bookListElement = document.getElementById("book-list");
+        let totalAmount = 0;
+
+        orderDetails.books.forEach(book => {
+            totalAmount += book.price * book.quantity;
+
+            const bookItem = document.createElement("li");
+            bookItem.innerHTML = `
+                <img src="${book.imgSrc}" alt="${book.title}">
+                <p><strong>Title:</strong> ${book.title}</p>
+                <p><strong>Quantity:</strong> ${book.quantity}</p>
+                <p><strong>Price:</strong> $${book.price}</p>
+            `;
+            bookListElement.appendChild(bookItem);
+        });
+
+        document.getElementById("total-amount").innerText = totalAmount;
+    </script>
+</body>
+</html>

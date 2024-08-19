@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Books</title>
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="search-container">
+        <h1>Find Your Book</h1>
+        <form action="product.html" method="GET">
+            <div class="search-bar-container">
+                <input type="text" name="search" class="search-bar" placeholder="Search for books..." oninput="showSuggestions(this.value)">
+                <button type="submit" class="search-button">
+                    <img src="search-icon.png" alt="Search" class="search-icon">
+                </button>
+            </div>
+            <ul id="suggestions" class="suggestions-list"></ul>
+        </form>
+    </div>
+
+    <script>
+        const suggestions = ["Book 1", "Book 2", "Book 3", "Book 4"]; // Example suggestions
+
+        function showSuggestions(value) {
+            const suggestionsList = document.getElementById('suggestions');
+            suggestionsList.innerHTML = '';
+            if (value) {
+                const filteredSuggestions = suggestions.filter(book => book.toLowerCase().includes(value.toLowerCase()));
+                filteredSuggestions.forEach(book => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = book;
+                    listItem.onclick = () => {
+                        document.querySelector('.search-bar').value = book;
+                        suggestionsList.innerHTML = '';
+                    };
+                    suggestionsList.appendChild(listItem);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
+
+
